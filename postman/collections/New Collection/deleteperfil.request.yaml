@@ -1,0 +1,11 @@
+$kind: http-request
+url: http://localhost:8000/api/perfil
+method: DELETE
+headers:
+  Accept: application/json
+auth:
+  type: bearer
+  credentials:
+    token: 7|4VpRAhYPBUA5ryH0OkOSr2ja7RXKKLh7DecREebSfe1140a4
+examples: .resources/deleteperfil.resources/examples
+order: 4502789985569357

@@ -1,0 +1,39 @@
+$kind: http-request
+url: http://localhost:8000/api/perfil
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: formdata
+  content:
+    - type: text
+      key: name
+      value: Nome novo
+      description: ""
+      disabled: false
+    - type: text
+      key: email
+      value: emailnovo@teste.com
+      description: ""
+      disabled: false
+    - type: text
+      key: telefone
+      value: "40028922"
+      description: ""
+      disabled: false
+    - type: text
+      key: bairro
+      value: Novo Mundo
+      description: ""
+      disabled: false
+    - type: file
+      key: foto_perfil
+      src:
+        - /C:/Users/horfe/Downloads/image.png
+      description: ""
+      disabled: false
+auth:
+  type: bearer
+  credentials:
+    token: 7|4VpRAhYPBUA5ryH0OkOSr2ja7RXKKLh7DecREebSfe1140a4
+order: 4501527214268859

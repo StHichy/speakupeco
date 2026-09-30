@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\EcopontoController;
 use App\Http\Controllers\Api\DenunciaController;
+use App\Http\Controllers\Api\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +16,8 @@ Route::get('/ecopontos/{ecoponto}', [EcopontoController::class, 'show']);
 
 // Rotas protegidas ou seja precisam do token para serem acessadas
 Route::middleware('auth:sanctum')->group(function () {
+    Route::delete('/perfil', [ProfileController::class, 'destroy']);
+    Route::post('/perfil', [ProfileController::class, 'update']);
     Route::get('/denuncias', [DenunciaController::class, 'index']);
     Route::post('/denuncias', [DenunciaController::class, 'store']);
     Route::post('/ecopontos', [EcopontoController::class, 'store']);
