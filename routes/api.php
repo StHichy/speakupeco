@@ -1,16 +1,23 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\EcopontoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-// Rotas públicas
+//Rotas que não precisam do token
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-// Rotas protegidas (Requer cabeçalho: Authorization: Bearer {token})
-Route::middleware('auth:sanctum')->group(function () {
-Route::get('/user', [AuthController::class, 'user']);
+Route::get('/ecopontos', [EcopontoController::class, 'index']);
+Route::get('/ecopontos/{ecoponto}', [EcopontoController::class, 'show']);
 
+// Rotas protegidas ou seja precisam do token para serem acessadas
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/ecopontos', [EcopontoController::class, 'store']);
+    Route::put('/ecopontos/{ecoponto}', [EcopontoController::class, 'update']);
+    Route::delete('/ecopontos/{ecoponto}', [EcopontoController::class, 'destroy']);
+    Route::get('/user', [AuthController::class, 'user']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });
+
