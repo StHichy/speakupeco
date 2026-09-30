@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    // Em app/Models/User.php
+    public function denuncias()
+    {
+        return $this->hasMany(Denuncia::class);
+    }
 }

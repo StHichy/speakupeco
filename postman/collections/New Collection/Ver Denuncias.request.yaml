@@ -1,0 +1,9 @@
+$kind: http-request
+description: ""
+url: http://localhost:8000/api/denuncias?Accept=application/json
+method: GET
+queryParams:
+  Accept: application/json
+auth:
+  type: bearer
+order: 4500766041000720

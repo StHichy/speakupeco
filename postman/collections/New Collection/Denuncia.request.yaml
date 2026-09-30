@@ -1,0 +1,34 @@
+$kind: http-request
+url: http://localhost:8000/api/denuncias?Accept=application/json
+method: POST
+queryParams:
+  Accept: application/json
+body:
+  type: formdata
+  content:
+    - type: file
+      key: foto
+      src:
+        - /C:/Users/horfe/Downloads/lixo.jpg
+      description: ""
+      disabled: false
+    - type: text
+      key: ponto_referencia
+      value: predio_c
+      description: ""
+      disabled: false
+    - type: text
+      key: criticidade
+      value: media
+      description: ""
+      disabled: false
+    - type: text
+      key: detalhes_localizacao
+      value: "Varios lixos jogados e espalhados "
+      description: ""
+      disabled: false
+auth:
+  type: bearer
+  credentials:
+    token: 6|WxaZCo8sZ6IB5DsJmpkhVTqc0KaNQ2hTHiL0qkI076be51a5
+order: 4477765360901971
