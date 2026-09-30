@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:8000/api/register
+method: POST
+body:
+  type: json
+  content: ""
+order: 4119449411809144

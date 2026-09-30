@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:8000/api/user?Accept=application/json
+method: GET
+queryParams:
+  Accept: application/json
+auth:
+  type: bearer
+  credentials:
+    token: Route::get('/user', [AuthController::class, 'user']);
+order: 4470439199308587

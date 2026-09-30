@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:8000/api/logout?Aceppt=application/json
+method: POST
+queryParams:
+  Aceppt: application/json
+auth:
+  type: bearer
+  credentials:
+    token: 2|mQ7QaQg6hkQWYtvc5Xw3ICvAUOx17i8FLicqGKEi5866639b
+order: 4469408555599496
